@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/workspace/Task5Pipeline"
+        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/workspace/Task6CPipeline"
         TESTING_ENVIRONMENT = "DeakinTesting"
         PRODUCTION_ENVIRONMENT = "TanyaGujral"
     }
@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "In Build stage"
-                echo "Fetch the source code from the directory path specified by the path: : ${env.DIRECTORY_PATH}"
+                echo "Fetch the source code from the directory path specified by the path: ${env.DIRECTORY_PATH}"
             }
         }
 
@@ -26,6 +26,11 @@ pipeline {
 					mail to: "tanyagujral07@gmail.com",
 					subject: "Test Status Email",
 					body: "Unit and Integration Tests were successful"
+				}
+				failure{
+					mail to: "tanyagujral07@gmail.com",
+					subject: "Test Status Email",
+					body: "Unit and Integration Tests stage failed"
 				}
 			}
         }
@@ -47,6 +52,11 @@ pipeline {
 					mail to: "tanyagujral07@gmail.com",
 					subject: "Security Scan Status Email",
 					body: "Security Scan was successful"
+				}
+				failure{
+					mail to: "tanyagujral07@gmail.com",
+					subject: "Security Scan Status Email",
+					body: "Security Scan failed"
 				}
 			}
         }
