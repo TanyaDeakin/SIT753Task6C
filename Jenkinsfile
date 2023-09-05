@@ -48,6 +48,7 @@ pipeline {
 					subject: "Security Scan Status Email",
 					body: "Security Scan was successful"
 				}
+			}
         }
 
         stage('Integration Tests on Staging') {
