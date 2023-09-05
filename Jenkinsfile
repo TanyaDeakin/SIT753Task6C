@@ -61,23 +61,6 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo "In Deploy to Production Stage"
-                echo "Deploy the application to the ${env.TESTING_ENVIRONMENT} environment"
-            }
-        }
-
-        stage('Approval') {
-            steps {
-                script {
-                    echo "In Approval Stage"
-                    echo "Paused 10 seconds before continuing"
-                    sleep(time: 10, unit: 'SECONDS')
-                }
-            }
-        }
-
-        stage('Deploy to Production') {
-            steps {
-                echo "In Deploy to Production Stage"
                 echo "Deploy the code to the ${env.PRODUCTION_ENVIRONMENT} environment"
             }
         }
