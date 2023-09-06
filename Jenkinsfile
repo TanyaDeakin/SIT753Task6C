@@ -23,11 +23,13 @@ pipeline {
             }
 			post{
 				success{
-					mail to: "tanyagujral07@gmail.com",
+					emailext attachLog: true,
+					to: "tanyagujral07@gmail.com",
 					subject: "Test Status Email",
 					body: "Unit and Integration Tests were successful"
 				}
 				failure{
+					emailext attachLog: true,
 					mail to: "tanyagujral07@gmail.com",
 					subject: "Test Status Email",
 					body: "Unit and Integration Tests stage failed"
@@ -49,12 +51,14 @@ pipeline {
             }
 			post{
 				success{
-					mail to: "tanyagujral07@gmail.com",
+					emailext attachLog: true,
+					to: "tanyagujral07@gmail.com",
 					subject: "Security Scan Status Email",
 					body: "Security Scan was successful"
 				}
 				failure{
-					mail to: "tanyagujral07@gmail.com",
+					emailext attachLog: true,
+					to: "tanyagujral07@gmail.com",
 					subject: "Security Scan Status Email",
 					body: "Security Scan failed"
 				}
@@ -74,13 +78,5 @@ pipeline {
                 echo "Deploy the code to the ${env.PRODUCTION_ENVIRONMENT} environment"
             }
         }
-    }
-    post {
-	    always{
-		    emailext attachLog: true,
-		    body: 'log file',
-		    subject: 'log file',
-		    to: 'tanyagujral07@gmail.com'
-	    }
     }
 }
