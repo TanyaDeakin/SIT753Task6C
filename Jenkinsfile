@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo "In Build stage"
                 echo "Fetch the source code from the directory path specified by the path: ${env.DIRECTORY_PATH}"
+		echo "Options of tools for this stage - Gradle, Ant, Maven"
             }
         }
 
@@ -20,6 +21,7 @@ pipeline {
                 echo "In Unit and Integration Test Stage"
                 echo "Unit tests done"
                 echo "Integration tests done"
+		echo "Options of tools for this stage - JUnit, TestNG, Selenium"
             }
 			post{
 				success{
@@ -41,6 +43,7 @@ pipeline {
             steps {
                 echo "In Code Analysis Stage"
                 echo "Analyze the quality of the code"
+		echo "Options of tools for this stage - Sonarqube, Checkmarx, PMD"
             }
         }
 
@@ -48,6 +51,7 @@ pipeline {
             steps {
                 echo "In Security Scan Stage"
                 echo "Identify security vulnerabilities in code"
+		echo "Options of tools for this stage - OWASP ZAP, Nessus, Veracode"
             }
 			post{
 				success{
@@ -69,6 +73,7 @@ pipeline {
             steps {
                 echo "In the stage - 'Integration Tests on Staging'"
                 echo "Integration Tests on near-production environment"
+		echo "Options of tools for this stage - AWS Code Deploy, Docker, Kubernetes"
             }
         }
 
