@@ -4,7 +4,7 @@ pipeline {
     environment {
         DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/workspace/Task6CPipeline"
         TESTING_ENVIRONMENT = "DeakinTesting"
-        PRODUCTION_ENVIRONMENT = "TanyaGujral"
+        PRODUCTION_ENVIRONMENT = "TanyaGujral
     }
 
     stages {
