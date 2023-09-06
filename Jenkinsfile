@@ -19,7 +19,7 @@ pipeline {
         stage('Unit and Integration Tests') {
             steps {
                 echo "In Unit and Integration Test Stage"
-                echo "Unit tests done"
+                echo "Unit tests completed"
                 echo "Integration tests done"
 		echo "Options of tools for this stage - JUnit, TestNG, Selenium"
             }
