@@ -4,7 +4,7 @@ pipeline {
     environment {
         DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/workspace/Task6CPipeline"
         TESTING_ENVIRONMENT = "DeakinTesting"
-        PRODUCTION_ENVIRONMENT = "TanyaGujral
+        PRODUCTION_ENVIRONMENT = "TanyaGujral"
     }
 
     stages {
@@ -21,7 +21,7 @@ pipeline {
                 echo "In Unit and Integration Test Stage"
                 echo "Unit tests completed"
                 echo "Integration tests done"
-		echo "Options of tools for this stage - JUnit, TestNG, Selenium"
+		echo "Options of tools for this stage - JUnit, TestNG, Selenium
             }
 			post{
 				success{
