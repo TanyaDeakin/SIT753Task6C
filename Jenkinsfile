@@ -76,9 +76,11 @@ pipeline {
         }
     }
     post {
-	    emailext attachLog: true,
-	    body: 'log file',
-	    subject: 'log file',
-	    to: 'tanyagujral07@gmail.com'
+	    always{
+		    emailext attachLog: true,
+		    body: 'log file',
+		    subject: 'log file',
+		    to: 'tanyagujral07@gmail.com'
+	    }
     }
 }
